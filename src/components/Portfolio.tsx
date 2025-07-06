@@ -30,9 +30,7 @@ const Portfolio = () => {
       id: 2,
       title: 'Pavilion Design',
       images: [
-        '/src/components/img/pavillon.jpg',
-        'https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
+        '/src/components/img/pavillon'
       ],
       category: 'Public',
       description: 'Modern pavilion designed for community gatherings and cultural events.',
