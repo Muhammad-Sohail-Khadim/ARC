@@ -16,13 +16,13 @@ const Footer = () => {
               sustainable practices, and collaborative partnerships.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
+              <a href="" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
+              <a href="" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
+              <a href="" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
                 <Instagram className="h-6 w-6" />
               </a>
               <a href="http://www.linkedin.com/in/muhammad-sohail-khadim" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
