@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Play, ExternalLink, Calendar, MapPin, Award, Eye, X } from 'lucide-react';
 import image11 from '../components/img/11.jpg';
 import image12 from '../components/img/12.jpg';
-
+import pavillon from '../components/img/pavillon.jpg';
+import pump1 from '../components/img/pump1.png';
+import pump2 from '../components/img/pump2.png';
+import pump3 from '../components/img/pump3.png';
+import pump4 from '../components/img/pump4.png';
+import pump5 from '../components/img/pump5.png';
 const Portfolio = () => {
   const [imageIndices, setImageIndices] = useState({});
   const [selectedProject, setSelectedProject] = useState(null);
@@ -11,36 +16,36 @@ const Portfolio = () => {
   const projectGallery = [
     {
       id: 1,
-      title: 'Luxury Villa Design',
+      title: 'Petrol pump',
       images: [
-        'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        image11,
-        image12
+        pump1,
+        pump2,
+        pump3,
+        pump4,
+        pump5
       ],
       category: 'Residential',
       description: 'A stunning villa that seamlessly blends indoor and outdoor living spaces.',
-      fullDescription: 'This luxury villa represents the perfect harmony between modern architecture and natural beauty. The design features expansive floor-to-ceiling windows that frame breathtaking views, while sustainable materials create a warm, organic aesthetic. The open-plan living spaces flow seamlessly onto outdoor terraces, blurring the boundaries between interior and exterior. Smart home technology is integrated throughout, including automated lighting systems and energy-efficient climate control.',
+      fullDescription: 'This state-of-the-art petrol pump embodies the perfect blend of modern infrastructure and operational efficiency. The design incorporates spacious canopies with energy-efficient LED lighting and wide lanes to accommodate all vehicle types. Durable, eco-friendly construction materials ensure longevity while promoting sustainability. The layout supports smooth traffic flow and safety, with clearly marked entry and exit points. Smart technology is integrated throughout — including automated fuel dispensers, digital payment systems, and energy-efficient power management — creating a seamless, customer-centric fueling experience.',
       features: ['Sustainable Materials', 'Smart Home Technology', 'Infinity Pool', 'Natural Integration', 'Energy Efficient'],
       area: '4,500 sq ft',
-      budget: '$2.8M',
-      location: 'Lake Tahoe, CA',
-      year: '2023'
+      budget: '',
+      location: 'Lahore,pk',
+      year: '2024'
     },
     {
       id: 2,
-      title: 'Corporate Headquarters',
+      title: 'Pavillon',
       images: [
-        'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        image11,
-        image12
+         pavillon
       ],
       category: 'Commercial',
       description: 'Modern corporate building designed for productivity and employee wellbeing.',
       fullDescription: 'The Corporate Innovation Center stands as a beacon of modern workplace design, featuring flexible spaces that adapt to the evolving needs of tech companies. The building incorporates biophilic design principles with living walls, natural lighting, and outdoor collaboration spaces. Advanced HVAC systems ensure optimal air quality, while the building\'s smart infrastructure supports the latest in workplace technology.',
       features: ['Biophilic Design', 'Flexible Workspaces', 'Smart Infrastructure', 'Living Walls', 'LEED Platinum'],
       area: '150,000 sq ft',
-      budget: '$45M',
-      location: 'San Francisco, CA',
+      budget: '$45',
+      location: 'Lahore, Pk',
       year: '2023'
     },
     {
