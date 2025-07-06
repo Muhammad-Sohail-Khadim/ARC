@@ -30,7 +30,7 @@ const Portfolio = () => {
       id: 2,
       title: 'Pavilion Design',
       images: [
-        '/src/components/img/pavillon'
+        '/src/components/img/pavillon.jpg'
       ],
       category: 'Public',
       description: 'Modern pavilion designed for community gatherings and cultural events.',
