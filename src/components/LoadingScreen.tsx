@@ -34,7 +34,7 @@ const LoadingScreen = () => {
                 className="h-16 w-16 object-contain rounded-full animate-bounce"
                 onError={(e) => {
                   console.log('Logo failed to load, using fallback');
-                  e.target.src = 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=64&h=64&fit=crop';
+                  e.target.src = '/src/components/img/111.jpg';
                 }}
               />
             </div>
