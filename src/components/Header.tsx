@@ -22,7 +22,7 @@ const Header = () => {
           {/* Logo - Fixed width to prevent overlap */}
           <div className="flex items-center space-x-2 flex-shrink-0 min-w-0">
             <img 
-              src="/111.jpg" 
+              src="components/img/111.jpg" 
               alt="NAZStudio Logo" 
               className="h-10 w-10 object-contain flex-shrink-0"
             />
