@@ -29,9 +29,13 @@ const LoadingScreen = () => {
             <div className="absolute inset-0 bg-blue-500 dark:bg-blue-400 rounded-full blur-xl opacity-30 animate-pulse"></div>
             <div className="relative bg-white dark:bg-gray-100 rounded-full p-6 shadow-2xl">
               <img
-                src="/111.jpg"
-                alt="Logo"
+                src="/src/components/img/111.jpg"
+                alt="NAZStudio Logo"
                 className="h-16 w-16 object-contain rounded-full animate-bounce"
+                onError={(e) => {
+                  console.log('Logo failed to load, using fallback');
+                  e.target.src = 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=64&h=64&fit=crop';
+                }}
               />
             </div>
           </div>

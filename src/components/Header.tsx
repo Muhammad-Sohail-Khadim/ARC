@@ -22,9 +22,13 @@ const Header = () => {
           {/* Logo - Fixed width to prevent overlap */}
           <div className="flex items-center space-x-2 flex-shrink-0 min-w-0">
             <img 
-              src="components/img/111.jpg" 
+              src="/src/components/img/111.jpg" 
               alt="NAZStudio Logo" 
-              className="h-10 w-10 object-contain flex-shrink-0"
+              className="h-10 w-10 object-contain flex-shrink-0 rounded-full"
+              onError={(e) => {
+                console.log('Header logo failed to load, using fallback');
+                e.target.src = 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop';
+              }}
             />
             <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white whitespace-nowrap">
               NAZ<span className="font-light">Studio</span>
