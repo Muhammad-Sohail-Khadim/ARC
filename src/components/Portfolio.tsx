@@ -37,7 +37,7 @@ const Portfolio = () => {
       fullDescription: 'This contemporary pavilion stands as a beacon of modern architectural design, featuring flexible spaces that adapt to various community needs. The structure incorporates sustainable design principles with natural lighting, efficient ventilation, and weather-resistant materials. The open-plan design promotes both intimate gatherings and large community events through adaptable space configurations.',
       features: ['Flexible Design', 'Weather Resistant', 'Natural Lighting', 'Community Focused', 'Sustainable Materials'],
       area: '3,000 sq ft',
-      budget: '$280K',
+      budget: '280K',
       location: 'Lahore, PK',
       year: '2024'
     },
@@ -45,7 +45,6 @@ const Portfolio = () => {
       id: 3,
       title: 'Cultural Center',
       images: [
-        'https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
         '/src/components/img/11.jpg',
         '/src/components/img/12.jpg'
       ],
