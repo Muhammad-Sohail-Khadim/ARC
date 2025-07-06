@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Play, ExternalLink, Calendar, MapPin, Award, Eye, X } from 'lucide-react';
-import image11 from '../components/img/11.jpg';
-import image12 from '../components/img/12.jpg';
-import pavillon from '../components/img/pavillon.jpg';
-import pump1 from '../components/img/pump1.png';
-import pump2 from '../components/img/pump2.png';
-import pump3 from '../components/img/pump3.png';
-import pump4 from '../components/img/pump4.png';
-import pump5 from '../components/img/pump5.png';
+
 const Portfolio = () => {
   const [imageIndices, setImageIndices] = useState({});
   const [selectedProject, setSelectedProject] = useState(null);
@@ -18,43 +11,45 @@ const Portfolio = () => {
       id: 1,
       title: 'Petrol pump',
       images: [
-        pump1,
-        pump2,
-        pump3,
-        pump4,
-        pump5
+        '/src/components/img/pump1.png',
+        '/src/components/img/pump2.png',
+        '/src/components/img/pump3.png',
+        '/src/components/img/pump4.png',
+        '/src/components/img/pump5.png'
       ],
-      category: 'Residential',
-      description: 'A stunning villa that seamlessly blends indoor and outdoor living spaces.',
+      category: 'Commercial',
+      description: 'A stunning modern petrol pump that seamlessly blends functionality with contemporary design.',
       fullDescription: 'This state-of-the-art petrol pump embodies the perfect blend of modern infrastructure and operational efficiency. The design incorporates spacious canopies with energy-efficient LED lighting and wide lanes to accommodate all vehicle types. Durable, eco-friendly construction materials ensure longevity while promoting sustainability. The layout supports smooth traffic flow and safety, with clearly marked entry and exit points. Smart technology is integrated throughout — including automated fuel dispensers, digital payment systems, and energy-efficient power management — creating a seamless, customer-centric fueling experience.',
-      features: ['Sustainable Materials', 'Smart Home Technology', 'Infinity Pool', 'Natural Integration', 'Energy Efficient'],
-      area: '4,500 sq ft',
-      budget: '',
-      location: 'Lahore,pk',
+      features: ['Sustainable Materials', 'Smart Technology', 'Energy Efficient', 'Safety Features', 'Modern Design'],
+      area: '2,500 sq ft',
+      budget: '$450K',
+      location: 'Lahore, PK',
       year: '2024'
     },
     {
       id: 2,
-      title: 'Pavillon',
+      title: 'Pavilion Design',
       images: [
-         pavillon
+        '/src/components/img/pavillon.jpg',
+        'https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop'
       ],
-      category: 'Commercial',
-      description: 'Modern corporate building designed for productivity and employee wellbeing.',
-      fullDescription: 'The Corporate Innovation Center stands as a beacon of modern workplace design, featuring flexible spaces that adapt to the evolving needs of tech companies. The building incorporates biophilic design principles with living walls, natural lighting, and outdoor collaboration spaces. Advanced HVAC systems ensure optimal air quality, while the building\'s smart infrastructure supports the latest in workplace technology.',
-      features: ['Biophilic Design', 'Flexible Workspaces', 'Smart Infrastructure', 'Living Walls', 'LEED Platinum'],
-      area: '150,000 sq ft',
-      budget: '$45',
-      location: 'Lahore, Pk',
-      year: '2023'
+      category: 'Public',
+      description: 'Modern pavilion designed for community gatherings and cultural events.',
+      fullDescription: 'This contemporary pavilion stands as a beacon of modern architectural design, featuring flexible spaces that adapt to various community needs. The structure incorporates sustainable design principles with natural lighting, efficient ventilation, and weather-resistant materials. The open-plan design promotes both intimate gatherings and large community events through adaptable space configurations.',
+      features: ['Flexible Design', 'Weather Resistant', 'Natural Lighting', 'Community Focused', 'Sustainable Materials'],
+      area: '3,000 sq ft',
+      budget: '$280K',
+      location: 'Lahore, PK',
+      year: '2024'
     },
     {
       id: 3,
       title: 'Cultural Center',
       images: [
         'https://images.pexels.com/photos/1707310/pexels-photo-1707310.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        image11,
-        image12
+        '/src/components/img/11.jpg',
+        '/src/components/img/12.jpg'
       ],
       category: 'Public',
       description: 'A community cultural center that serves as a landmark for the city.',
@@ -70,8 +65,8 @@ const Portfolio = () => {
       title: 'Eco-Friendly Home',
       images: [
         'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-        image11,
-        image12
+        '/src/components/img/11.jpg',
+        '/src/components/img/12.jpg'
       ],
       category: 'Residential',
       description: 'Sustainable home design featuring renewable energy and green technologies.',
@@ -84,7 +79,7 @@ const Portfolio = () => {
     }
   ];
 
-  // Initialize image indices
+  // Initialize image indices when component mounts
   useEffect(() => {
     const initialIndices = {};
     projectGallery.forEach(project => {
@@ -105,7 +100,7 @@ const Portfolio = () => {
               ...prev,
               [project.id]: (prev[project.id] + 1) % project.images.length
             }));
-          }, 2000);
+          }, 3000); // Changed to 3 seconds for better visibility
         }
       });
 
@@ -115,14 +110,14 @@ const Portfolio = () => {
         });
       };
     }
-  }, [selectedProject]);
+  }, [selectedProject, projectGallery]);
 
   // Auto-swiping for modal images
   useEffect(() => {
     if (selectedProject && selectedProject.images && selectedProject.images.length > 1) {
       const interval = setInterval(() => {
         setModalImageIndex(prev => (prev + 1) % selectedProject.images.length);
-      }, 2000);
+      }, 3000);
 
       return () => clearInterval(interval);
     }
@@ -161,7 +156,6 @@ const Portfolio = () => {
     }
   ];
 
-  
   const achievements = [
     {
       icon: <Award className="h-8 w-8" />,
@@ -193,45 +187,57 @@ const Portfolio = () => {
             Discover our latest projects through detailed videos and comprehensive project showcases
           </p>
         </div>
-         {/* Project Gallery Section */}
+         
+        {/* Project Gallery Section */}
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">Project Gallery</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {projectGallery.map((project) => (
               <div key={project.id} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-48">
                   <img 
                     src={project.images[imageIndices[project.id] || 0]} 
-                    alt={project.title} 
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" 
+                    alt={`${project.title} - Image ${(imageIndices[project.id] || 0) + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      console.log('Image failed to load:', e.target.src);
+                      // Fallback to a placeholder or next image
+                      e.target.src = 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop';
+                    }}
+                    loading="lazy"
                   />
+                  
                   {/* Image counter */}
                   {project.images && project.images.length > 1 && (
                     <div className="absolute top-2 right-2">
-                      <div className="bg-black/50 text-white px-2 py-1 rounded-full text-xs">
+                      <div className="bg-black/70 text-white px-2 py-1 rounded-full text-xs font-medium">
                         {(imageIndices[project.id] || 0) + 1}/{project.images.length}
                       </div>
                     </div>
                   )}
+                  
                   {/* Auto-play indicator */}
                   <div className="absolute top-2 left-2">
-                    <div className="bg-green-500/80 text-white px-2 py-1 rounded-full text-xs flex items-center gap-1">
+                    <div className="bg-green-500/90 text-white px-2 py-1 rounded-full text-xs flex items-center gap-1">
                       <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
                       Auto
                     </div>
                   </div>
+                  
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 right-4">
                       <button
                         onClick={() => openProjectModal(project)}
                         className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors duration-200"
+                        aria-label={`View ${project.title} details`}
                       >
                         <Eye className="h-5 w-5 text-white" />
                       </button>
                     </div>
                   </div>
                 </div>
+                
                 <div className="p-6">
                   <span className="block text-sm text-blue-600 dark:text-blue-400 mb-1 font-medium">{project.category}</span>
                   <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{project.title}</h4>
@@ -240,7 +246,7 @@ const Portfolio = () => {
                     onClick={() => openProjectModal(project)}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-200 text-sm font-medium"
                   >
-                    Read More
+                    View Details
                   </button>
                 </div>
               </div>
@@ -341,6 +347,7 @@ const Portfolio = () => {
               <button
                 onClick={closeProjectModal}
                 className="absolute top-4 right-4 z-10 p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors duration-200"
+                aria-label="Close modal"
               >
                 <X className="h-6 w-6 text-white" />
               </button>
@@ -348,18 +355,22 @@ const Portfolio = () => {
               <div className="relative h-64 md:h-80 overflow-hidden rounded-t-2xl">
                 <img
                   src={selectedProject.images[modalImageIndex]}
-                  alt={selectedProject.title}
+                  alt={`${selectedProject.title} - Image ${modalImageIndex + 1}`}
                   className="w-full h-full object-cover transition-all duration-500"
+                  onError={(e) => {
+                    console.log('Modal image failed to load:', e.target.src);
+                    e.target.src = 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 
                 {/* Modal image counter and auto-play indicator */}
                 {selectedProject.images && selectedProject.images.length > 1 && (
                   <div className="absolute top-4 left-4 flex gap-2">
-                    <div className="bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                    <div className="bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {modalImageIndex + 1}/{selectedProject.images.length}
                     </div>
-                    <div className="bg-green-500/80 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
+                    <div className="bg-green-500/90 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
                       <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                       Auto
                     </div>
@@ -435,6 +446,9 @@ const Portfolio = () => {
                                 src={image}
                                 alt={`${selectedProject.title} ${index + 1}`}
                                 className="w-full h-20 object-cover hover:scale-110 transition-transform duration-300"
+                                onError={(e) => {
+                                  e.target.src = 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop';
+                                }}
                               />
                               {index === modalImageIndex && (
                                 <div className="absolute inset-0 bg-blue-500/20"></div>
