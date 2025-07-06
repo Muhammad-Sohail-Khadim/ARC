@@ -16,13 +16,13 @@ const Footer = () => {
               sustainable practices, and collaborative partnerships.
             </p>
             <div className="flex space-x-4">
-              <a href="" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
+              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
+              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
+              <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
                 <Instagram className="h-6 w-6" />
               </a>
               <a href="http://www.linkedin.com/in/muhammad-sohail-khadim" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors duration-200">
@@ -34,10 +34,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-400 dark:text-gray-500">
-              <li><a href="" className="hover:text-white dark:hover:text-gray-300 transition-colors duration-200">Residential Design</a></li>
-              <li><a href="" className="hover:text-white dark:hover:text-gray-300 transition-colors duration-200">Commercial Architecture</a></li>
-              <li><a href="" className="hover:text-white dark:hover:text-gray-300 transition-colors duration-200">Master Planning</a></li>
-              <li><a href="" className="hover:text-white dark:hover:text-gray-300 transition-colors duration-200">Interior Design</a></li>
+              <li><a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors duration-200">Residential Design</a></li>
+              <li><a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors duration-200">Commercial Architecture</a></li>
+              <li><a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors duration-200">Master Planning</a></li>
+              <li><a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors duration-200">Interior Design</a></li>
             </ul>
           </div>
           
@@ -51,5 +51,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
