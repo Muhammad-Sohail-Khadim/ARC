@@ -53,7 +53,7 @@ const Portfolio = () => {
       fullDescription: 'This contemporary cultural center represents a thoughtful integration of modern architectural principles with cultural heritage. The design features clean geometric lines softened by traditional patterns and locally sourced materials. Natural light is carefully controlled through innovative skylight systems and strategically placed windows to create optimal viewing conditions for artwork.',
       features: ['Cultural Integration', 'Flexible Gallery Spaces', 'Natural Lighting', 'Traditional Elements', 'Local Materials'],
       area: '25,000 sq ft',
-      budget: '$3.2M',
+      budget: '3.2k',
       location: 'Lahore, Pakistan',
       year: '2024'
     },
@@ -61,7 +61,7 @@ const Portfolio = () => {
       id: 4,
       title: 'Eco-Friendly Home',
       images: [
-        'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
+        ' ',
         '/src/components/img/11.jpg',
         '/src/components/img/12.jpg'
       ],
