@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { ExternalLink, MapPin, Calendar, ChevronLeft, ChevronRight, Eye, X } from 'lucide-react';
 import image11 from '../components/img/11.jpg';
 import image12 from '../components/img/12.jpg';
@@ -23,7 +23,7 @@ const Projects = () => {
     { id: 'public', name: 'Public' }
   ];
 
-  const projects = [
+  const projects = useMemo(() => [
     {
       id: 1,
       title: 'Modern Lakeside Residence',
@@ -160,7 +160,7 @@ const Projects = () => {
       area: '180,000 sq ft',
       budget: '$55M'
     }
-  ];
+  ], []);
 
   const filteredProjects = activeCategory === 'all' 
     ? projects 
@@ -173,7 +173,7 @@ const Projects = () => {
       initialIndices[project.id] = 0;
     });
     setCardImageIndices(initialIndices);
-  }, []);
+  }, [projects]);
 
   // Auto-play functionality for main carousel
   useEffect(() => {
@@ -194,10 +194,12 @@ const Projects = () => {
 
   // Auto-play functionality for card images (only when modal is closed)
   useEffect(() => {
+    const currentCardAutoPlayRefs = cardAutoPlayRefs.current;
+    
     if (!selectedProject) {
       projects.forEach(project => {
         if (project.images && project.images.length > 1) {
-          cardAutoPlayRefs.current[project.id] = setInterval(() => {
+          currentCardAutoPlayRefs[project.id] = setInterval(() => {
             setCardImageIndices(prev => ({
               ...prev,
               [project.id]: (prev[project.id] + 1) % project.images.length
@@ -207,13 +209,13 @@ const Projects = () => {
       });
     } else {
       // Clear all card auto-play intervals when modal is open
-      Object.values(cardAutoPlayRefs.current).forEach(interval => {
+      Object.values(currentCardAutoPlayRefs).forEach(interval => {
         if (interval) clearInterval(interval);
       });
     }
 
     return () => {
-      Object.values(cardAutoPlayRefs.current).forEach(interval => {
+      Object.values(currentCardAutoPlayRefs).forEach(interval => {
         if (interval) clearInterval(interval);
       });
     };
