@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Play, ExternalLink, Calendar, MapPin, Award, Eye, X } from 'lucide-react';
 
 const Portfolio = () => {
@@ -6,7 +6,7 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalImageIndex, setModalImageIndex] = useState(0);
 
-  const projectGallery = [
+  const projectGallery = useMemo(() => [
     {
       id: 1,
       title: 'Petrol pump',
@@ -48,7 +48,6 @@ const Portfolio = () => {
       images: [
         '/src/components/img/11.jpg',
         '/src/components/img/12.jpg'
-        
       ],
       category: 'Public',
       description: 'A community cultural center that serves as a landmark for the city.',
@@ -63,7 +62,6 @@ const Portfolio = () => {
       id: 4,
       title: 'Eco-Friendly Home',
       images: [
-        ' ',
         '/src/components/img/h1.jpg',
         '/src/components/img/h2.jpg',
         '/src/components/img/h3.jpg'
@@ -77,7 +75,7 @@ const Portfolio = () => {
       location: 'Portland, OR',
       year: '2022'
     }
-  ];
+  ], []);
 
   // Initialize image indices when component mounts
   useEffect(() => {
@@ -86,7 +84,7 @@ const Portfolio = () => {
       initialIndices[project.id] = 0;
     });
     setImageIndices(initialIndices);
-  }, []);
+  }, [projectGallery]);
 
   // Auto-swiping functionality for cards (pause when modal is open)
   useEffect(() => {
